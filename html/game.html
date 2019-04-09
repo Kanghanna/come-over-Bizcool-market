@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <style type="text/css">
+        canvas {
+
+            background-image: url("../img/yellow.png");
+            background-size: contain;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            display: inline-block;
+        }
+
+        .bread {
+            position: absolute;
+            top: 200px;
+            left: 10px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .bacon {
+            position: absolute;
+            top: 200px;
+            left: 30px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .egg {
+            position: absolute;
+            top: 200px;
+            left: 50px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .lettuce {
+            position: absolute;
+            top: 200px;
+            left: 70px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .tomato {
+            position: absolute;
+            top: 200px;
+            left: 90px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .bread2 {
+            position: absolute;
+            top: 320px;
+            left: 380px;
+            width: 70px;
+            height: 70px;
+            z-index: 1;
+            visibility: hidden;
+        }
+
+        .bacon2 {
+            position: absolute;
+            top: 320px;
+            left: 380px;
+            width: 70px;
+            height: 70px;
+            z-index: 1;
+            visibility: hidden;
+        }
+
+        .egg2 {
+            position: absolute;
+            top: 320px;
+            left: 380px;
+            width: 70px;
+            height: 70px;
+            z-index: 1;
+            visibility: hidden;
+        }
+
+        .lettuce2 {
+            position: absolute;
+            top: 320px;
+            left: 380px;
+            width: 70px;
+            height: 70px;
+            z-index: 1;
+            visibility: hidden;
+        }
+
+        .tomato2 {
+            position: absolute;
+            top: 320px;
+            left: 380px;
+            width: 70px;
+            height: 70px;
+            z-index: 1;
+            visibility: hidden;
+        }
+
+        .dish {
+            position: absolute;
+            top: 150px;
+            left: 180px;
+            z-index: 0;
+            width: 120px;
+            height: 120px;
+        }
+
+        .trash {
+            position: absolute;
+            top: 255px;
+            left: 10px;
+            width: 70px;
+            height: 70px;
+        }
+
+        .hand {
+            position: absolute;
+            top: 255px;
+            left: 30px;
+            width: 130px;
+            height: 70px;
+        }
+
+        #cstm1 {
+            position: absolute;
+            top: 100px;
+            left: 50px;
+            visibility: hidden;
+        }
+
+        #cstm2 {
+            position: absolute;
+            top: 100px;
+            left: 320px;
+            visibility: hidden;
+        }
+
+        #cstm3 {
+            position: absolute;
+            top: 100px;
+            left: 600px;
+            visibility: hidden;
+        }
+
+        #tb1 {
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            visibility: hidden;
+        }
+
+        #tb2 {
+            position: absolute;
+            top: 10px;
+            left: 320px;
+            visibility: hidden;
+        }
+
+        #tb3 {
+            position: absolute;
+            top: 10px;
+            left: 600px;
+            visibility: hidden;
+        }
+
+        #sdwc1,
+        #sdwc2,
+        #sdwc3 {
+            position: absolute;
+            top: 10px;
+            left: 50px;
+            visibility: hidden;
+        }
+
+        #sdwc2 {
+            left: 320px;
+            visibility: hidden;
+        }
+
+        #sdwc3 {
+            left: 600px;
+            visibility: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="canvas" width="800" height="600"></canvas>
+    <img id="cstm1" src="../img/cstm.jpg" width="auto" height="200">
+    <img id="cstm2" src="../img/cstm.jpg" width="auto" height="200">
+    <img id="cstm3" src="../img/cstm.jpg" width="auto" height="200">
+    <img id="tb1" src="../img/textbox.jpg" width="200" height="120">
+    <img id="tb2" src="../img/textbox.jpg" width="200" height="120">
+    <img id="tb3" src="../img/textbox.jpg" width="200" height="120">
+    <img id="sdwc1" src="../img/sandwich1.jpg" width="150" height="80">
+    <img id="sdwc2" src="../img/sandwich2.jpg" width="150" height="80">
+    <img id="sdwc3" src="../img/sandwich3.jpg" width="150" height="80">
+
+    <button class="bread" onclick="add1()">
+        <img class="bread" src="../img/bread.png">
+    </button>
+    <br>
+    <button class="bacon" onclick="add2()">
+        <img class="bacon" src="../img/bacon.png">
+    </button>
+    <br>
+    <button class="egg" onclick="add3()">
+        <img class="egg" src="../img/egg.png">
+    </button>
+    <br>
+    <button class="lettuce" onclick="add4()">
+        <img class="lettuce" src="../img/lettuce.png">
+    </button>
+    <br>
+    <button class="tomato" onclick="add5()">
+        <img class="tomato" src="../img/tomato.png">
+    </button>
+    <br>
+    <button class="bread2" id="bread2">
+        <img id="bread2" width="70" height="70" src="../img/bread.png">
+    </button>
+    <br>
+    <button class="bacon2" id="bacon2">
+        <img id="bacon2" width="70" height="70" src="../img/bacon.png">
+    </button>
+    <br>
+    <button class="egg2" id="egg2">
+        <img id="egg2" width="70" height="70" src="../img/egg.png">
+    </button>
+    <br>
+    <button class="lettuce2" id="lettuce2">
+        <img id="lettuce2" width="70" height="70" src="../img/lettuce.png">
+    </button>
+    <br>
+    <button class="tomato2" id="tomato2">
+        <img id="tomato2" width="70" height="70" src="../img/tomato.png">
+    </button>
+    <br>
+    <button class="dish">
+        <img class="dish" src="../img/dish.png">
+    </button>
+    <br>
+    <button class="trash" onclick="add6()">
+        <img class="trash" src="../img/trash.png">
+    </button>
+    <br>
+    <button class="hand" onclick="add7()">
+        <img class="hand" src="../img/hand.png">
+    </button>
+    <br>
+    <script src="../js/game.js"></script>
+</body>
+
+</html>
